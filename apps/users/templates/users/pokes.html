@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pokes</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'users/css/style.css' %}">
+  </head>
+  <body>
+    <h1>Welcome, {{user.alias}}!</h1>
+    <a id="logout" href="{% url 'logout' %}">Logout</a>
+    <h2 id="whopokedtag">{{pokedmecount}} people poked you!</h2>
+    <div id="whopoked">
+      {% for element in whopokedme %}
+        <p>{{element.alias}} poked you {{element.times}} times.</p>
+      {% endfor %}
+    </div>
+    <p id="tabletag">People you may want to poke:</p>
+    <table>
+      <tr id="plhead">
+        <td>Name</td>
+        <td>Alias</td>
+        <td>Email</td>
+        <td>Poke History</td>
+        <td>Action</td>
+      </tr>
+      {% for element in otherusers %}
+        <tr>
+          <td>{{element.user.name}}</td>
+          <td>{{element.user.alias}}</td>
+          <td>{{element.user.email}}</td>
+          <td>{{element.times_poked}}</td>
+          <td><form action="{% url 'addpoke' %}" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="poker" value="{{user.id}}">
+            <input type="hidden" name="poked" value="{{element.user.id}}">
+            <input type="submit" value="Poke!">
+          </form></td>
+        </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

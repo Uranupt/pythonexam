@@ -1,0 +1,70 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.logregform{
+  padding: 0px 10px 20px 10px;
+  text-align: right;
+  border: 2px solid black;
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px;
+}
+
+label{
+  float: left;
+}
+
+input[type=submit]{
+  margin-top: 5px;
+  padding: 5px;
+  box-shadow: 3px 3px grey;
+}
+
+h1{
+  margin: 20px;
+}
+
+.formnametag{
+  display: inline-block;
+  position: relative;
+  bottom: 25px;
+  background-color: white;
+  padding: 5px;
+}
+
+#logout{
+  float:right;
+  position: relative;
+  right: 20px;
+  bottom: 60px;
+}
+
+#whopoked{
+  margin: 10px 20px;
+  border: 1px solid black;
+  display: inline-block;
+  padding: 10px;
+}
+
+#whopokedtag{
+  margin: 10px 20px;
+}
+
+table{
+  margin: 10px 20px;
+}
+
+#tabletag{
+  margin: 10px 20px;
+  font-weight: bold;
+}
+
+#plhead{
+  background-color: lightgrey;
+}
+
+td{
+  padding: 2px 5px;
+}
